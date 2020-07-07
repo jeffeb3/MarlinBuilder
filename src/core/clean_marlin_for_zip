@@ -1,8 +1,10 @@
 #!/bin/bash
 
+cd ../
+
 set -ex
-. $(dirname "$0")/version
-. $(dirname "$0")/env
+. $(dirname "$0")/core/version
+. $(dirname "$0")/core/env
 
 ## Move to Marlin Dir
 cd "$V1_ROOT/$MARLINDIR"
