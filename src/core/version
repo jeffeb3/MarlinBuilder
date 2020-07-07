@@ -4,3 +4,4 @@
 
 export V1_VERSION=430
 export MARLIN_VERSION="${MARLIN_VERSION:-Custom}"
+export CONFIG_NAME="${CONFIG_NAME:-ConfigUnknown}"

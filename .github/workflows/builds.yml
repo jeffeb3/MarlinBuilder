@@ -12,6 +12,7 @@ jobs:
 
     env:
       MARLIN_VERSION: ${{ matrix.branch }}
+      CONFIG_NAME: ${{ matrix.machine }}
 
     name: ${{ matrix.machine }}-${{ matrix.branch }}
     runs-on: ubuntu-latest
