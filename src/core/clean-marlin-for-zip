@@ -25,7 +25,6 @@ rm -rf \
     .gitignore \
     .pio \
     process-palette.json \
-    buildroot \
     config \
     data \
     docs \
