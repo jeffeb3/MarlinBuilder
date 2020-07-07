@@ -17,7 +17,7 @@ steps to take to complete a particular build.
 
 These are the main steps:
  - Check out a fresh copy of the MarlinFirmware.
- - Call "build-for-machine", which will change the Configuration.h, Configuration_adv.h, etc. for
+ - Call "config-for-machine", which will change the Configuration.h, Configuration_adv.h, etc. for
      that particular machine.
      - This calls a particular machine setup file, like src/configs/V1CNC_Rambo_Dual
      - This calls specific groups of configs, such as configuring it for a CNC, rambo specific
@@ -45,3 +45,6 @@ If you want to change any of the configurations, make the appropriate changes to
 scripts, push to a new branch, and then let github actions build a .zip for you. Download the zip,
 and look at the Configuration files it produced. You should then also do a runtime test by flashing
 the board with the firmware file, or flash it through arduino.
+
+Don't forget to set the version number in src/core/version. I don't have a good way to do that
+automatically.
