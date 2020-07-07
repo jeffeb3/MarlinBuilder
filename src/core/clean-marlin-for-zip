@@ -35,6 +35,9 @@ cd "$MARLINDIR"/..
 
 # rename the marlin directory
 mv "$MARLINDIR" "Marlin_${CONFIG_NAME}_${MARLIN_VERSION}_${V1_VERSION}"
+
+# It's ok if these fail
+set +e
 mv firmware.bin "Firmware_${CONFIG_NAME}_${MARLIN_VERSION}_${V1_VERSION}.bin"
 mv firmware.hex "Firmware_${CONFIG_NAME}_${MARLIN_VERSION}_${V1_VERSION}.hex"
 
