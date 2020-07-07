@@ -31,3 +31,5 @@ rm -rf \
     docs \
     lib \
 
+# Grrr.
+ls /home/runner/work/MarlinBuilder/MarlinBuilder/firmware.*
