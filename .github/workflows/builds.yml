@@ -30,17 +30,6 @@ jobs:
         - V1CNC_Ramps_Dual
 
     steps:
-    - name: Check out MarlinBuilder
-      uses: actions/checkout@v2
-
-    - name: Check out MarlinFirmware
-      uses: actions/checkout@v2
-      with:
-        repository: MarlinFirmware/Marlin
-        ref: ${{ matrix.branch }}
-        path: Marlin
-        clean: true
-        fetch-depth: 1
 
     # Based on .github/workflows/test-builds.yml
     - name: Select Python 3.7
@@ -53,6 +42,18 @@ jobs:
       run: |
         pip install -U https://github.com/platformio/platformio-core/archive/master.zip
         platformio update
+
+    - name: Check out MarlinBuilder
+      uses: actions/checkout@v2
+
+    - name: Check out MarlinFirmware
+      uses: actions/checkout@v2
+      with:
+        repository: MarlinFirmware/Marlin
+        ref: ${{ matrix.branch }}
+        path: Marlin
+        clean: true
+        fetch-depth: 1
 
     - name: Configure
       run: |
