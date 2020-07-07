@@ -67,13 +67,13 @@ jobs:
         src/core/clean-marlin-for-zip
 
     - name: Save Hex
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: firmware-${{ matrix.machine }}-${{ matrix.branch }}
         path: "firmware.*"
 
     - name: Save Zip
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: MarlinFirmware-${{ matrix.machine }}-${{ matrix.branch }}
         path: Marlin
