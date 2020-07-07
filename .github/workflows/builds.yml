@@ -92,6 +92,6 @@ jobs:
     - name: Save Zip
       uses: actions/upload-artifact@v1
       with:
-        name: MarlinFirmware.h
-        path: Marlin/Marlin/Configuration.h
+        name: MarlinFirmware.zip
+        path: Marlin
 
