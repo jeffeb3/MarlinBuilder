@@ -25,7 +25,7 @@ on: [push, pull_request]
 jobs:
   build:
 
-    name: ${{ matrix.machine }}-{{ matrix.branch }}
+    name: ${{ matrix.machine }}-${{ matrix.branch }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -53,7 +53,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: .github/scripts/configure-git
     - name: Check out MarlinFirmware
       run: |
         git clone http://github.com/MarlinFirmware/Marlin.git --depth 1 --branch "${{ matrix.branch }}"
