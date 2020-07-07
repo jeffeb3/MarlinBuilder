@@ -3,8 +3,8 @@
 ## Script Setup
 
 set -ex
-. $(dirname "$0")/core/version
-. $(dirname "$0")/core/env
+. $(dirname "$0")/version
+. $(dirname "$0")/env
 
 ## Parse arguments for machine
 export CONFIG_NAME=$1
@@ -13,7 +13,7 @@ shift
 [ "$CONFIG_NAME" ] || exit 2
 
 ## Move to Marlin Dir
-cd "$V1_ROOT/$MARLINDIR"
+cd "$MARLINDIR"
 
 ## Set up configs
 export PATH=$PATH:buildroot/bin

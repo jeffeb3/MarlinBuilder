@@ -1,12 +1,7 @@
 
-V1_VERSION="${V1_VERSION:-430}"
-MARLIN_VERSION="${MARLIN_VERSION:-Custom}"
+export V1_ROOT=${V1_ROOT:-$(cd "$(dirname "$0")/../.."; pwd)}
+export SCRIPTDIR="${SCRIPTDIR:-${V1_ROOT}/src}"
+export COREDIR="${COREDIR:-${SCRIPTDIR}/core}"
+export CFGDIR="${CFGDIR:-$SCRIPTDIR/configs}"
+export MARLINDIR="${MARLINDIR:-${V1_ROOT}/Marlin}"
 
-V1_ROOT=${V1_ROOT:-$(cd "$(dirname "$0")/.."; pwd)}
-SCRIPTDIR="${SCRIPTDIR:-${V1_ROOT}/src}"
-CFGDIR="${CFGDIR:-$SCRIPTDIR/configs}"
-MARLINDIR="${MARLINDIR:-Marlin}"
-
-PATH="$PATH:$V1_ROOT/$SCRIPTDIR"
-
-export V1_VERSION MARLIN_VERSION V1_ROOT SCRIPTDIR CFGDIR MARLINDIR PATH

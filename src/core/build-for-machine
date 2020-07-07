@@ -3,11 +3,11 @@
 ## Script Setup
 
 set -ex
-. $(dirname "$0")/core/version
-. $(dirname "$0")/core/env
+. $(dirname "$0")/version
+. $(dirname "$0")/env
 
 ## Move to Marlin Dir
-cd "$V1_ROOT/$MARLINDIR"
+cd "$MARLINDIR"
 
 ## Build
 platformio run --project-dir . --silent "$@"
