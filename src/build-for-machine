@@ -21,3 +21,7 @@ $V1_ROOT/$CFGDIR/$machine
 cp $V1_ROOT/$CFGDIR/common/_Bootscreen.h Marlin/
 
 platformio run --project-dir . -e "$env" --silent "$@"
+
+# Copy the output file out here, so we can save it as an artifact
+cp .pio/build/$env/$out ../
+
