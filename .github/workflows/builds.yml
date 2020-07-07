@@ -27,7 +27,6 @@ jobs:
 
     name: ${{ matrix.machine }}-{{ matrix.branch }}
     runs-on: ubuntu-latest
-    needs: generate
 
     strategy:
       fail-fast: false # Allow all machines to finish building
