@@ -39,5 +39,6 @@ mv "$MARLINDIR" "Marlin_${CONFIG_NAME}_${MARLIN_VERSION}_${V1_VERSION}"
 # It's ok if these fail
 set +e
 mv firmware.bin "firmware_${CONFIG_NAME}_${MARLIN_VERSION}_${V1_VERSION}.bin"
+set +e
 mv firmware.hex "firmware_${CONFIG_NAME}_${MARLIN_VERSION}_${V1_VERSION}.hex"
 
