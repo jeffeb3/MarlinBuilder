@@ -27,6 +27,3 @@ platformio run --project-dir . -e "$PLATFORMIO_ENV" --silent "$@"
 
 # Copy the output file out here, so we can save it as an artifact
 cp .pio/build/$PLATFORMIO_ENV/firmware.[bh]* ../
-
-# Clean up some stuff from the Marlin folder, because it is going to be zipped up.
-$V1_ROOT/src/core/clean_marlin_for_zip
