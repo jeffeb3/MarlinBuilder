@@ -3,13 +3,13 @@
 ## Script Setup
 
 set -ex
-. $(dirname "$0")/env
+. $(dirname "$0")/core/env
 
 ## Parse arguments for machine
-machine=$1
+export CONFIG_NAME=$1
 shift
-# Exit if we don't have a machine name
-[ "$machine" ] || exit 2
+# Exit if we don't have a CONFIG_NAME name
+[ "$CONFIG_NAME" ] || exit 2
 
 ## Move to Marlin Dir
 cd "$V1_ROOT/$MARLINDIR"
@@ -19,7 +19,8 @@ export PATH=$PATH:buildroot/bin
 
 restore_configs
 
-. $CFGDIR/$machine
+echo "# ${CONFIG_NAME} - ${MARLIN_VERSION} - ${V1_VERSION}" > README.md
+. $CFGDIR/$CONFIG_NAME
 
 ## Build
 platformio run --project-dir . -e "$PLATFORMIO_ENV" --silent "$@"
@@ -27,3 +28,5 @@ platformio run --project-dir . -e "$PLATFORMIO_ENV" --silent "$@"
 # Copy the output file out here, so we can save it as an artifact
 cp .pio/build/$PLATFORMIO_ENV/firmware.[bh]* ../
 
+# Clean up some stuff from the Marlin folder, because it is going to be zipped up.
+$V1_ROOT/src/core/clean_marlin_for_zip

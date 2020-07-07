@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Since we will be zipping up this folder as an artifact, let's clean it up a bit first.
+
+# The hope is that we can still build using arduino or platformio after we have unzipped this.
+
+rm -rf \
+    .git \
+    .gitattributes \
+    .github \
+    .gitignore \
+    .pio \
+    process-palette.json \
+    buildroot \
+    config \
+    data \
+    docs \
+    lib \
+

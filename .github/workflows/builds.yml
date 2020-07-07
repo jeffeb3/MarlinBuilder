@@ -6,21 +6,6 @@ on: [push, pull_request]
 #  schedule:
 #    # On 45-th minute, every 6 hours
 #    - cron:  '45 */6 * * *'
-#
-#  push:
-#    branches:
-#    - 'v1-**'
-#    paths-ignore:
-#    - data/**
-#    - docs/**
-#    - '**/*.md'
-#  pull_request:
-#    branches:
-#    - 'v1-**'
-#    paths-ignore:
-#    - data/**
-#    - docs/**
-#    - '**/*.md'
 
 jobs:
   build:
@@ -35,21 +20,9 @@ jobs:
         - 2.0.5.3
         machine:
         - V1CNC_Rambo
-        #- MP3DP/Ramps_16T_MK
-        ##- MPCNC/Archim1_T8_16T_LCD
-        ##- MPCNC/Archim1_T8_16T_LCD_DualEndstop
-        ##- MPCNC/Archim2_T8_16T_LCD_16step
-        #- MPCNC/MRambo_T8_16T_LCD
-        #- MPCNC/Rambo_T8_16T_LCD
-        #- MPCNC/Rambo_T8_16T_LCD_DualEndstop
-        #- MPCNC/Ramps_T8_16T_LCD_32step
-        #- MPCNC/Ramps_T8_16T_LCD_32step_DualEndstop
-        #- MPCNC/SKR1.3_T8_16T_LCD_32step
-        #- MPCNC/SKR1.3_T8_16T_LCD_32step_DualEndstop
-        #- MPCNC/SKRPro1.1_T8_16T_LCD_32step_DualEndstop
-        #- ZenXY/MiniRambo_16T
-        #- ZenXY/Ramps_16T_LCD_32
-        #- Lowrider/SKR1.3_T8_16T_LCD_32step_DualDrivers
+        - V1CNC_Rambo_Dual
+        - V1CNC_Rambo_DualLR
+        - V1CNC_Ramps_Dual
 
     steps:
     - uses: actions/checkout@v2
