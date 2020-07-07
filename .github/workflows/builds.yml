@@ -56,7 +56,7 @@ jobs:
 
     - name: Clean Marlin for Zip
       run: |
-        src/core/clean_marlin_for_zip
+        src/clean-marlin-for-zip
 
     - name: Build
       run: |
