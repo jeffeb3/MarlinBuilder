@@ -71,6 +71,6 @@ jobs:
     - name: Save Zip
       uses: actions/upload-artifact@v1
       with:
-        name: MarlinFirmware-${{ matrix.machine }}-${{ matrix.branch }}.zip
+        name: MarlinFirmware-${{ matrix.machine }}-${{ matrix.branch }}
         path: Marlin
 
