@@ -29,6 +29,7 @@ jobs:
         - V1CNC_Rambo_Dual
         - V1CNC_Rambo_DualLR
         - V1CNC_Ramps_Dual
+        - V1CNC_SkrPro_Dual
 
     steps:
 
