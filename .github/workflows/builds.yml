@@ -54,13 +54,13 @@ jobs:
         pip install -U https://github.com/platformio/platformio-core/archive/master.zip
         platformio update
 
-    - name: Build
-      run: |
-        src/build-for-machine ${{ matrix.machine }}
-
     - name: Clean Marlin for Zip
       run: |
         src/core/clean_marlin_for_zip
+
+    - name: Build
+      run: |
+        src/build-for-machine ${{ matrix.machine }}
 
     - name: Save Hex
       uses: actions/upload-artifact@v1
