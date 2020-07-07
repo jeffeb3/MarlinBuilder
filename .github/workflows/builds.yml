@@ -21,6 +21,7 @@ jobs:
       fail-fast: false # Allow all machines to finish building
       matrix:
         branch:
+        - bugfix-2.0.x
         - 2.0.5.3
         machine:
         - V13DP_MiniRambo
