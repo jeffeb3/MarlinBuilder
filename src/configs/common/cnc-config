@@ -16,7 +16,13 @@ opt_set X_BED_SIZE "300"
 opt_set Y_BED_SIZE "300"
 opt_set HOMING_FEEDRATE_XY "(30*60)"
 opt_set HOMING_FEEDRATE_Z "(3*60)"
+
+# Leave these both in here. They are each needed for different, current, sw versions.
+opt_set X_HOME_BUMP_MM "5"
+opt_set Y_HOME_BUMP_MM "5"
+opt_set Z_HOME_BUMP_MM "2"
 opt_set HOMING_BUMP_MM "{ 5, 5, 2 }"
+
 opt_set HOMING_BUMP_DIVISOR "{ 2, 2, 4 }"
 opt_set DEFAULT_STEPPER_DEACTIVE_TIME "1200"
 opt_set SD_FINISHED_STEPPERRELEASE "false"
@@ -41,6 +47,7 @@ opt_enable \
     CNC_COORDINATE_SYSTEMS \
     GCODE_MOTION_MODES \
     CUSTOM_USER_MENUS \
+    INDIVIDUAL_AXIS_HOMING_MENU \
     SHOW_CUSTOM_BOOTSCREEN
 
 opt_disable \
