@@ -3,7 +3,7 @@
 # This script adds the V1 logos, and names to the configs.
 
 opt_set STRING_CONFIG_H_AUTHOR "\"(V1 Engineering, Ryan)\""
-opt_set CUSTOM_MACHINE_NAME "\"V1 CNC\""
+opt_set CUSTOM_MACHINE_NAME "\"V1 ${V1_VERSION}\""
 cp $CFGDIR/common/_Bootscreen.h Marlin/
 opt_enable SHOW_CUSTOM_BOOTSCREEN
 

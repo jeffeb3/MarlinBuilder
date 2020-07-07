@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Set up the custom version strings here.
+
+V1_VERSION=430
+MARLIN_VERSION="${MARLIN_VERSION:-Custom}"
+
+export V1_VERSION MARLIN_VERSION

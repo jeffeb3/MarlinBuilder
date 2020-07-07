@@ -27,10 +27,14 @@ jobs:
         - V1CNC_Ramps_Dual
 
     steps:
-    - uses: actions/checkout@v2
     - name: Check out MarlinFirmware
-      run: |
-        git clone http://github.com/MarlinFirmware/Marlin.git --depth 1 --branch "${{ matrix.branch }}"
+    - uses: actions/checkout@v2
+      with:
+        repository: MarlinFirmware/Marlin
+        ref: ${{ matrix.branch }}
+        path: Marlin
+        clean: true
+        fetch-depth: 1
 
     # Based on .github/workflows/test-builds.yml
     - name: Select Python 3.7
