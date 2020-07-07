@@ -30,6 +30,9 @@ jobs:
         - V1CNC_Ramps_Dual
 
     steps:
+    - name: Check out MarlinBuilder
+      uses: actions/checkout@v2
+
     - name: Check out MarlinFirmware
       uses: actions/checkout@v2
       with:
