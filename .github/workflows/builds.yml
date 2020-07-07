@@ -10,6 +10,9 @@ on: [push, pull_request]
 jobs:
   build:
 
+    env:
+      MARLIN_VERSION: ${{ matrix.branch }}
+
     name: ${{ matrix.machine }}-${{ matrix.branch }}
     runs-on: ubuntu-latest
 
