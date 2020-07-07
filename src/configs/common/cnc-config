@@ -1,4 +1,6 @@
 
+opt_set CUSTOM_MACHINE_NAME "\"V1CNC ${V1_VERSION}\""
+
 opt_set EXTRUDERS "0"
 opt_set Z_MIN_ENDSTOP_INVERTING "true"
 opt_set Z_MAX_ENDSTOP_INVERTING "false"
