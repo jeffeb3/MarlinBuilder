@@ -22,7 +22,6 @@ jobs:
       matrix:
         branch:
         - bugfix-2.0.x
-        - 2.0.5.3
         machine:
         - V13DP_MiniRambo
         - V1CNC_MiniRambo

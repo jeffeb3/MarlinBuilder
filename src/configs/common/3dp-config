@@ -21,13 +21,7 @@ opt_set HOMING_FEEDRATE_Z "(3*60)"
 opt_set PREHEAT_1_TEMP_HOTEND "196"
 opt_set PREHEAT_1_TEMP_BED "62"
 opt_set EXTRUDER_AUTO_FAN_SPEED "250"
-
-# Leave these both in here. They are each needed for different, current, sw versions.
-opt_set X_HOME_BUMP_MM "7"
-opt_set Y_HOME_BUMP_MM "7"
-opt_set Z_HOME_BUMP_MM "3"
 opt_set HOMING_BUMP_MM "{ 7, 7, 3 }"
-
 opt_set HOMING_BUMP_DIVISOR "{ 3, 3, 5 }"
 opt_set DEFAULT_STEPPER_DEACTIVE_TIME "1200"
 opt_set LCD_TIMEOUT_TO_STATUS "45000"
