@@ -1,13 +1,13 @@
 #!/bin/bash
-  
+
 set -e
 
 incdir=$(dirname $0)/..
 
 restore_configs
 
-. $incdir/base-3dp-config
-. $incdir/avr-lcd-timings 
+. $incdir/common/base-3dp-config
+. $incdir/avr-lcd-timings
 . $incdir/drv8825
 
 opt_set DEFAULT_AXIS_STEPS_PER_UNIT "{ 200, 200, 800, 200 }"
