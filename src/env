@@ -1,5 +1,5 @@
 V1_ROOT=${V1_ROOT:-$(cd "$(dirname "$0")/.."; pwd)}
-SCRIPTDIR="${SCRIPTDIR:-src}"
+SCRIPTDIR="${SCRIPTDIR:-${V1_ROOT}/src}"
 CFGDIR="${CFGDIR:-$SCRIPTDIR/configs}"
 MARLINDIR="${MARLINDIR:-Marlin}"
 

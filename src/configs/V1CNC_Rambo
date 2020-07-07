@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+restore_configs
+
+opt_enable SHOW_CUSTOM_BOOTSCREEN
+
+. $CFGDIR/common/base-cnc-config
+. $CFGDIR/board-rambo
+. $CFGDIR/no-dual-endstops
+
+cp $CFGDIR/common/_Bootscreen.h Marlin/
+
+opt_enable REVERSE_ENCODER_DIRECTION
+
+export PLATFORMIO_ENV=rambo

@@ -1,27 +1,29 @@
 #!/bin/bash
 
-set -ex
+## Script Setup
 
+set -ex
 . $(dirname "$0")/env
 
+## Parse arguments for machine
 machine=$1
 shift
-
+# Exit if we don't have a machine name
 [ "$machine" ] || exit 2
 
-eval $($V1_ROOT/$CFGDIR/build-settings.py "$machine")
-
+## Move to Marlin Dir
 cd "$V1_ROOT/$MARLINDIR"
+
+## Set up configs
 export PATH=$PATH:buildroot/bin
 
 restore_configs
 
-$V1_ROOT/$CFGDIR/$machine
+. $CFGDIR/$machine
 
-cp $V1_ROOT/$CFGDIR/common/_Bootscreen.h Marlin/
-
-platformio run --project-dir . -e "$env" --silent "$@"
+## Build
+platformio run --project-dir . -e "$PLATFORMIO_ENV" --silent "$@"
 
 # Copy the output file out here, so we can save it as an artifact
-cp .pio/build/$env/$out ../
+cp .pio/build/$PLATFORMIO_ENV/firmware.[bh]* ../
 

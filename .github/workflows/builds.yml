@@ -34,8 +34,8 @@ jobs:
         branch:
         - 2.0.5.3
         machine:
-        - MP3DP/MRambo_16T_aero
-        - MP3DP/Ramps_16T_MK
+        - V1CNC_Rambo
+        #- MP3DP/Ramps_16T_MK
         ##- MPCNC/Archim1_T8_16T_LCD
         ##- MPCNC/Archim1_T8_16T_LCD_DualEndstop
         ##- MPCNC/Archim2_T8_16T_LCD_16step
@@ -72,28 +72,13 @@ jobs:
     - name: Build
       run: |
         src/build-for-machine ${{ matrix.machine }}
-        #src/build-zips ${{ matrix.machine }}
 
-        #- name: Release
-        #  uses: ncipollo/release-action@v1
-        #  with:
-        #    artifacts: ".zip/*.zip,.bin/*"
-        #    #bodyFile: "body.md"
-        #    token: ${{ secrets.GITHUB_TOKEN }}
-        #    prerelease: true
-        #    name: unstable
-        #    # FIXME: This needs to be dynamic and possibly use a different action
-        #    # e.g. https://github.com/actions/create-release/pull/12
-        #    tag: v1-bugfix-2.0.x-auto
-        #    commit: ${{ github.ref }}
-        #    allowUpdates: true
-        #
-        #
     - name: Save Hex
       uses: actions/upload-artifact@v1
       with:
         name: firmware-${{ matrix.machine }}-${{ matrix.branch }}.hex
         path: firmware.hex
+
     - name: Save Zip
       uses: actions/upload-artifact@v1
       with:
