@@ -87,3 +87,11 @@ jobs:
         #    tag: v1-bugfix-2.0.x-auto
         #    commit: ${{ github.ref }}
         #    allowUpdates: true
+        #
+        #
+    - name: Save Zip
+      uses: actions/upload-artifact@v1
+      with:
+        name: MarlinFirmware.h
+        path: Marlin/Marlin/Configuration.h
+
