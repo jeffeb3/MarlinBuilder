@@ -15,8 +15,7 @@ rm -rf \
     .gitignore \
     .pio \
     process-palette.json \
-    buildroot/share \
-    buildroot/etc \
+    buildroot \
     config \
     data \
     docs \
