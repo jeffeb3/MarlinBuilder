@@ -1,4 +1,4 @@
-name: V1 Builds
+name: platformio_build
 
 on:
   schedule:
@@ -26,10 +26,6 @@ jobs:
         machine:
         - V13DP_MiniRambo
         - V13DP_Ramps_MK8
-        - V1CNC_Archim1
-        - V1CNC_Archim1_Dual
-        - V1CNC_Archim2
-        - V1CNC_Archim2_Dual
         - V1CNC_MiniRambo
         - V1CNC_Rambo
         - V1CNC_Rambo_Dual
