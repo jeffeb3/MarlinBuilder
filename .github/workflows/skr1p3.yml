@@ -30,12 +30,12 @@ jobs:
         - 2.0.5.4
         - bugfix-2.0.x
         machine:
-        - V1CNC_Skr1p3_8825
-        - V1CNC_Skr1p3_2209
-        - V1CNC_Skr1p3_Dual_8825
+        #- V1CNC_Skr1p3_8825
+        #- V1CNC_Skr1p3_2209
+        #- V1CNC_Skr1p3_Dual_8825
         - V1CNC_Skr1p3_Dual_2209
-        - V1CNC_Skr1p3_DualLR_8825
-        - V1CNC_Skr1p3_DualLR_2209
+        #- V1CNC_Skr1p3_DualLR_8825
+        #- V1CNC_Skr1p3_DualLR_2209
 
     steps:
 

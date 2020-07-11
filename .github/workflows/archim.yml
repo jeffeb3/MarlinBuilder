@@ -52,9 +52,9 @@ jobs:
         - bugfix-2.0.x
         machine:
         - V1CNC_Archim1
-        - V1CNC_Archim1_Dual
-        - V1CNC_Archim2
-        - V1CNC_Archim2_Dual
+        #- V1CNC_Archim1_Dual
+        #- V1CNC_Archim2
+        #- V1CNC_Archim2_Dual
 
     steps:
 

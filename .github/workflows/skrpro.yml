@@ -30,8 +30,8 @@ jobs:
         - 2.0.5.4
         - bugfix-2.0.x
         machine:
-        - V1CNC_SkrPro_2209
-        - V1CNC_SkrPro_DualLR_2209
+        #- V1CNC_SkrPro_2209
+        #- V1CNC_SkrPro_DualLR_2209
         - V1CNC_SkrPro_Dual_2209
 
     steps:
