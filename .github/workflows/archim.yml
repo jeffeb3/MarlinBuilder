@@ -13,7 +13,30 @@ on:
   pull_request:
 
 jobs:
+
+  prebuild:
+    name: prebuild
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Based on .github/workflows/test-builds.yml
+    - name: Select Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.7' # Version range or exact version of a Python version to use, using semvers version range syntax.
+        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+
+    - name: Install PlatformIO
+      run: |
+        pip install -U https://github.com/platformio/platformio-core/archive/master.zip
+        platformio update
+
+    - name: Check out MarlinBuilder
+      uses: actions/checkout@v2
+
   build-platform-io:
+    needs: prebuild
 
     env:
       MARLIN_VERSION: ${{ matrix.branch }}
@@ -34,21 +57,6 @@ jobs:
         - V1CNC_Archim2_Dual
 
     steps:
-
-    # Based on .github/workflows/test-builds.yml
-    - name: Select Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: '3.7' # Version range or exact version of a Python version to use, using semvers version range syntax.
-        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-
-    - name: Install PlatformIO
-      run: |
-        pip install -U https://github.com/platformio/platformio-core/archive/master.zip
-        platformio update
-
-    - name: Check out MarlinBuilder
-      uses: actions/checkout@v2
 
     - name: Check out MarlinFirmware
       uses: actions/checkout@v2
