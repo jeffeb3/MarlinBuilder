@@ -65,6 +65,8 @@ jobs:
         src/core/config-for-machine ${{ matrix.machine }}
 
     - name: Build
+      # platform.io doesn't work in 2.0.5.4 for archim boards
+      if: ${{ !contains("Archim", matrix.machine) && matrix.branch == "2.0.5.4" }}
       run: |
         src/core/build-for-machine
 
