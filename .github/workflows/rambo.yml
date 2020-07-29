@@ -31,16 +31,13 @@ jobs:
       max-parallel: 1  # Try to reduce the failures by running fewer jobs at a time
       matrix:
         branch:
-        - 2.0.6
         - 2.0.5.4
-        - bugfix-2.0.x
         machine:
         - V13DP_MiniRambo
         - V1CNC_MiniRambo
         - V1CNC_Rambo
         - V1CNC_Rambo_Dual
         - V1CNC_Rambo_DualLR
-        - V1CNC_Ramps_Dual
         - V1ZXY_MiniRambo
 
     steps:

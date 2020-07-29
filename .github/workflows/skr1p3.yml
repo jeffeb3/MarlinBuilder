@@ -1,21 +1,21 @@
 name: skr_1p3
 
 on:
-  schedule:
-    # At 12:15 each day. No idea what time zone this is...
-    - cron:  '15 12 * * *'
+  #schedule:
+  #  # At 12:15 each day. No idea what time zone this is...
+  #  - cron:  '15 12 * * *'
   push:
     branches:
     - main
-  pull_request:
-    branches:
-    - main
-    paths-ignore:
-    - src/configs/V1*Archim*
-    - src/configs/V1*Rambo*
-    - src/configs/V1*Ramps*
-    - src/configs/V1*SkrPro*
-    - '**/*.md'
+  #pull_request:
+  #  branches:
+  #  - main
+  #  paths-ignore:
+  #  - src/configs/V1*Archim*
+  #  - src/configs/V1*Rambo*
+  #  - src/configs/V1*Ramps*
+  #  - src/configs/V1*SkrPro*
+  #  - '**/*.md'
 
 jobs:
   build:
@@ -32,15 +32,9 @@ jobs:
       max-parallel: 1  # Try to reduce the failures by running fewer jobs at a time
       matrix:
         branch:
-        - 2.0.6
         - 2.0.5.4
-        - bugfix-2.0.x
         machine:
-        - V1CNC_Skr1p3_8825
-        - V1CNC_Skr1p3_2209
-        - V1CNC_Skr1p3_Dual_8825
         - V1CNC_Skr1p3_Dual_2209
-        - V1CNC_Skr1p3_DualLR_8825
         - V1CNC_Skr1p3_DualLR_2209
 
     steps:
