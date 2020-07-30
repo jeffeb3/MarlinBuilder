@@ -1,0 +1,7 @@
+runs:
+  using: "composite"
+  steps:
+    - name: Build
+      run: |
+        src/core/build-for-machine
+

@@ -31,53 +31,22 @@ jobs:
       matrix:
         branch:
         - 2.0.6
-        - 2.0.5.4
-        - bugfix-2.0.x
         machine:
-        - V13DP_MiniRambo
-        - V1CNC_MiniRambo
         - V1CNC_Rambo
-        - V1CNC_Rambo_Dual
-        - V1CNC_Rambo_DualLR
-        - V1CNC_Ramps_Dual
-        - V1ZXY_MiniRambo
 
     steps:
 
     # First, cancel unfinished jobs.
     - uses: technote-space/auto-cancel-redundant-job@v1
 
-    # Based on .github/workflows/test-builds.yml
-    - name: Select Python 3.7
-      uses: actions/setup-python@v1
+    - name: prebuild
+      uses: user/prebuild@v1
       with:
-        python-version: '3.7' # Version range or exact version of a Python version to use, using semvers version range syntax.
-        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+        branch: {{ matrix.branch }}
+        machine: {{ matrix.machine }}
 
-    - name: Install PlatformIO
-      run: |
-        pip install -U https://github.com/platformio/platformio-core/archive/master.zip
-        platformio update
-
-    - name: Check out MarlinBuilder
-      uses: actions/checkout@v2
-
-    - name: Check out MarlinFirmware
-      uses: actions/checkout@v2
-      with:
-        repository: MarlinFirmware/Marlin
-        ref: ${{ matrix.branch }}
-        path: Marlin
-        clean: true
-        fetch-depth: 1
-
-    - name: Configure
-      run: |
-        src/core/config-for-machine ${{ matrix.machine }}
-
-    - name: Build
-      run: |
-        src/core/build-for-machine
+    - name: platformio
+      uses: user/platformio@v1
 
     - name: Build
       uses: ArminJo/arduino-test-compile@v2
