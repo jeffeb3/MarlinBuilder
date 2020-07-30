@@ -64,13 +64,13 @@ jobs:
       run: |
         src/core/config-for-machine ${{ matrix.machine }}
 
-    - name: Build
+    - name: Build w/ Platformio
       # platform.io doesn't work in 2.0.5.4 for archim boards
-      if: ${{ !contains(matrix.machine, 'Archim') && matrix.branch == '2.0.5.4' }}
+      if: ${{ !contains(matrix.machine, 'Archim') || matrix.branch != '2.0.5.4' }}
       run: |
         src/core/build-for-machine
 
-    - name: Build
+    - name: Build w/ Arduino
       uses: ArminJo/arduino-test-compile@v2
       with:
         sketch-names: Marlin.ino
