@@ -3,7 +3,7 @@ name: rambo
 on:
   schedule:
     # At 12:15 each day. No idea what time zone this is...
-    - cron:  '15 12 * * *'
+    - cron:  '31 * * * *'
   push:
     branches:
     - main
