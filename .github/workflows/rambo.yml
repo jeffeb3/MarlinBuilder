@@ -42,7 +42,6 @@ jobs:
         - V1CNC_Rambo
         - V1CNC_Rambo_Dual
         - V1CNC_Rambo_DualLR
-        - V1CNC_Ramps_Dual
         - V1ZXY_MiniRambo
 
     steps:
@@ -115,5 +114,5 @@ jobs:
       with:
         upload_url: ${{ github.event.release.upload_url }}
         asset_path: Marlin-Release.zip
-        asset_name: ${{ matrix.machine }}-${{ matrix.branch }}-430-src.zip
+        asset_name: ${{ matrix.machine }}-${{ matrix.branch }}-src.zip
         asset_content_type: application/zip
