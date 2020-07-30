@@ -88,7 +88,7 @@ jobs:
         name: ${{ matrix.machine }}-${{ matrix.branch }}
         path: |
           firmware_*
-          Marlin*.zip
+          Marlin_*.zip
 
     - name: Upload Marlin-${{ matrix.machine }}-${{ matrix.branch }}-src.zip to release
       if: ${{ github.event_name == 'release' }}
@@ -97,9 +97,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: |
-          firmware_*
-          Marlin*.zip
+        asset_path: Marlin-Release.zip
         asset_name: ${{ matrix.machine }}-${{ matrix.branch }}-src.zip
         asset_content_type: application/zip
 
@@ -173,7 +171,7 @@ jobs:
         name: ${{ matrix.machine }}-${{ matrix.branch }}
         path: |
           firmware_*
-          Marlin*.zip
+          Marlin_*.zip
 
     - name: Upload Marlin-${{ matrix.machine }}-${{ matrix.branch }}-src.zip to release
       if: ${{ github.event_name == 'release' }}
@@ -182,9 +180,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: |
-          firmware_*
-          Marlin*.zip
+        asset_path: Marlin-Release.zip
         asset_name: ${{ matrix.machine }}-${{ matrix.branch }}-src.zip
         asset_content_type: application/zip
 
