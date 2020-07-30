@@ -115,7 +115,7 @@ jobs:
       with:
         upload_url: ${{ github.event.release.upload_url }}
         asset_path: |
-          firmware_${{ matrix.machine }}-${{ matrix.branch }}-430.bin
-          Marlin_${{ matrix.machine}}-${{ matrix.branch }}-430.zip
+          firmware_${{ matrix.machine }}_${{ matrix.branch }}_430.bin
+          Marlin_${{ matrix.machine}}_${{ matrix.branch }}_430-src.zip
         asset_name: ${{ matrix.machine }}-${{ matrix.branch }}-430-src.zip
         asset_content_type: application/zip
