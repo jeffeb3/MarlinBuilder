@@ -26,7 +26,7 @@ jobs:
       fail-fast: false # Allow all machines to finish building
       matrix:
         branch:
-        - bugfix-2.0.x
+        - 2.0.6
         - 2.0.5.4
         machine:
         - V1CNC_Archim1
