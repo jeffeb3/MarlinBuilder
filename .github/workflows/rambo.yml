@@ -42,8 +42,8 @@ jobs:
     - name: prebuild
       uses: user/prebuild@v1
       with:
-        branch: "2.0.6"
-        machine: "V1CNC_Rambo"
+        branch: ${{ matrix.branch }}
+        machine: ${{ matrix.machine }}
 
     - name: platformio
       uses: user/platformio@v1
