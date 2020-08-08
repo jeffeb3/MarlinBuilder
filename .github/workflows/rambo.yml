@@ -38,6 +38,9 @@ jobs:
     # First, cancel unfinished jobs.
     - uses: technote-space/auto-cancel-redundant-job@v1
 
+    - name: Check out MarlinBuilder
+      uses: actions/checkout@v2
+
     - name: prebuild
       uses: ./.github/actions/prebuild
       with:

@@ -21,9 +21,6 @@ runs:
         pip install -U https://github.com/platformio/platformio-core/archive/master.zip
         platformio update
 
-    - name: Check out MarlinBuilder
-      uses: actions/checkout@v2
-
     - name: Check out MarlinFirmware
       uses: actions/checkout@v2
       with:
