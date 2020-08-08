@@ -1,13 +1,19 @@
 name: rambo
 
 on:
-  schedule:
-    # At 12:15 each day. No idea what time zone this is...
-    - cron:  '15 12 * * *'
   push:
+
+  pull_request:
     branches:
     - main
-  workflow_dispatch:
+    paths-ignore:
+    - src/configs/V1*Archim*
+    - src/configs/V1*Ramps*
+    - src/configs/V1*Skr*
+    - '**/*.md'
+  release:
+    types:
+      - published
 
 jobs:
   build:
