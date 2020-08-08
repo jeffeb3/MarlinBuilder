@@ -7,14 +7,6 @@ on:
   push:
     branches:
     - main
-  pull_request:
-    branches:
-    - main
-    paths-ignore:
-    - src/configs/V1*Archim*
-    - src/configs/V1*Ramps*
-    - src/configs/V1*Skr*
-    - '**/*.md'
 
 jobs:
   build:
