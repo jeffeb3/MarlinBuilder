@@ -4,4 +4,3 @@ runs:
     - name: Build
       run: |
         src/core/build-for-machine
-

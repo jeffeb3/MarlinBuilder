@@ -40,13 +40,13 @@ jobs:
     - uses: technote-space/auto-cancel-redundant-job@v1
 
     - name: prebuild
-      uses: user/prebuild@v1
+      uses: jeffeb3/prebuild@v1
       with:
         branch: ${{ matrix.branch }}
         machine: ${{ matrix.machine }}
 
     - name: platformio
-      uses: user/platformio@v1
+      uses: jeffeb3/platformio@v1
 
     - name: Build
       uses: ArminJo/arduino-test-compile@v2
